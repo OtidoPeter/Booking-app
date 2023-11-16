@@ -68,6 +68,24 @@ func main() {
 			}
 		}
 
+
+		/* switch statements
+		city := "London"
+
+		switch city {
+		case "New York":
+			// execute code for booking New York confererence tickets
+		case "Singapore", "Hong Kong":
+			// execute code for booking Singapore & Hong Kong conference tickets
+		case "London", "Berlin":
+			// execute code for booking London & Berlin conference tickets
+		case "Mexico City":
+			// Some code here
+		default:
+			fmt.Print("No valid city selected")
+		*/
+
+		}
 	}
 
 }
