@@ -6,16 +6,17 @@ import (
 )
 
 const conferenceTickets int = 50
+
 var conferenceName = "Go conference"
 var remainingTickets uint = 50
-var	bookings = []string{}
+var bookings = []string{}
 
 func main() {
-	
+
 	greetUsers()
 
 	for {
-		
+
 		firstName, lastName, email, userTickets := getUserInput()
 		isValidName, isValidEmail, isValidTicketNumber := validateUserInput(firstName, lastName, email, userTickets)
 
@@ -24,7 +25,6 @@ func main() {
 
 			firstNames := getFirstNames()
 			fmt.Printf("The first names of bookings are: %v\n", firstNames)
-}
 
 			if remainingTickets == 0 {
 				// end program
@@ -62,13 +62,6 @@ func getFirstNames() []string {
 	return firstNames
 }
 
-func validateUserInput(firstName string, lastName string, email string, userTickets uint) (bool, bool, bool) {
-	isValidName := len(firstName) >= 2 && len(lastName) >= 2
-	isValidEmail := strings.Contains(email, "@")
-	isValidTicketNumber := userTickets > 0 && userTickets <= remainingTickets
-	return isValidName, isValidEmail, isValidTicketNumber
-}
-
 func getUserInput() (string, string, string, uint) {
 	var firstName string
 	var lastName string
@@ -98,4 +91,3 @@ func bookTicket(userTickets uint, firstName string, lastName string, email strin
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
 }
-		
