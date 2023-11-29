@@ -1,8 +1,6 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 const conferenceTickets int = 50
 
@@ -24,7 +22,7 @@ func main() {
 	for {
 
 		firstName, lastName, email, userTickets := getUserInput()
-		isValidName, isValidEmail, isValidTicketNumber := helper.ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
+		isValidName, isValidEmail, isValidTicketNumber := ValidateUserInput(firstName, lastName, email, userTickets, remainingTickets)
 
 		if isValidName && isValidEmail && isValidTicketNumber {
 			bookTicket(userTickets, firstName, lastName, email)
@@ -90,7 +88,6 @@ func getUserInput() (string, string, string, uint) {
 func bookTicket(userTickets uint, firstName string, lastName string, email string) {
 	remainingTickets = remainingTickets - userTickets
 
-	// create a map for a user
 	var userData = UserData{
 		firstName:       firstName,
 		lastName:        lastName,
